@@ -1,0 +1,17 @@
+{
+    "name": "fatah/belajar-framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sapotong",
+            "email": "new.m.tah@gmail.com"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.13.4"
+    }
+}
