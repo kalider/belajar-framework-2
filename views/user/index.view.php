@@ -26,21 +26,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Fatah</td>
-                    <td>fatah</td>
-                    <td>fatah@kawatama.com</td>
-                    <td>Cihanjuang</td>
-                    <td>Sukabumi, 03 Desember 1996</td>
-                    <td>
-                        <span class="badge rounded-pill bg-success">active</span>
-                    </td>
-                    <td>
-                        <a href="/user/edit?id=1" class="btn btn-warning">Edit</a>
-                        <a href="/user/delete?id=1" class="btn btn-danger">Hapus</a>
-                    </td>
-                </tr>
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td><?= $user['id'] ?></td>
+                        <td><?= $user['fullname'] ?></td>
+                        <td><?= $user['username'] ?></td>
+                        <td><?= $user['email'] ?></td>
+                        <td><?= $user['address'] ?></td>
+                        <td><?= date('d F Y', strtotime($user['dob'])) ?></td>
+                        <td><?= $user['status'] == 1 ? '<span class="badge rounded-pill bg-success">active</span>':'<span class="badge rounded-pill bg-danger">inactive</span>' ?></td>
+                        <td>
+                            <a href="/user/edit?id=<?= $user['id'] ?>" class="btn btn-warning">Edit</a>
+                            <a href="/user/delete?id=<?= $user['id'] ?>" class="btn btn-danger">Hapus</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
