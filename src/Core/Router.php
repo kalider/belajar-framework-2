@@ -52,6 +52,10 @@ class Router
 
     public function route($uri, $method)
     {
+        if (strtolower($method) == 'post') {
+            Session::flash('old', $_POST);
+        }
+
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
 
