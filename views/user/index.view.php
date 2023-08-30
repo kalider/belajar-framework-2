@@ -37,7 +37,11 @@
                         <td><?= $user['status'] == 1 ? '<span class="badge rounded-pill bg-success">active</span>':'<span class="badge rounded-pill bg-danger">inactive</span>' ?></td>
                         <td>
                             <a href="/user/edit?id=<?= $user['id'] ?>" class="btn btn-warning">Edit</a>
-                            <a href="/user/delete?id=<?= $user['id'] ?>" class="btn btn-danger">Hapus</a>
+                            <form action="/user" method="post" class="d-inline" onsubmit="return confirm('Apakah anda yakin menghapus user ini? User yang dihapus tidak bisa dikembalikan.')">
+                                <input type="hidden" name="_method" value="delete">
+                                <input type="hidden" name="id" value="<?= $user['id'] ?>">
+                                <button class="btn btn-danger" type="submit">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

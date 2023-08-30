@@ -7,5 +7,6 @@ $router->get('/about', 'about.php');
 $router->get('/user', 'user/index.php');
 $router->post('/user', 'user/store.php');
 $router->put('/user', 'user/update.php');
+$router->delete('/user', 'user/delete.php');
 $router->get('/user/create', 'user/create.php');
 $router->get('/user/edit', 'user/edit.php');
