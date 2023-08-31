@@ -13,6 +13,7 @@
     ],
     "require": {
         "robmorgan/phinx": "^0.13.4",
-        "rakit/validation": "^1.4"
+        "rakit/validation": "^1.4",
+        "firebase/php-jwt": "^6.8"
     }
 }

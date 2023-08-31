@@ -8,3 +8,5 @@ DESC users;
 USE myapp;
 
 SELECT * FROM users;
+
+SELECT * FROM sessions;

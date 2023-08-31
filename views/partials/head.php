@@ -27,9 +27,9 @@
                         <a class="nav-link <?= urlIs('/about') ? 'active':''; ?>" href="/about">About</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" action="/logout" method="post" onsubmit="return confirm('Apakah anda yakin ingin logout?')">
+                    <input type="hidden" name="_method" value="delete">
+                    <button class="btn btn-outline-danger" type="submit">Logout</button>
                 </form>
             </div>
         </div>
