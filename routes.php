@@ -14,3 +14,8 @@ $router->put('/user', 'user/update.php')->only('auth');
 $router->delete('/user', 'user/delete.php')->only('auth');
 $router->get('/user/create', 'user/create.php')->only('auth');
 $router->get('/user/edit', 'user/edit.php')->only('auth');
+
+// manage task
+$router->get('/task', 'task/index.php')->only('auth');
+$router->post('/task', 'task/store.php')->only('auth');
+$router->get('/task/create', 'task/create.php')->only('auth');

@@ -24,6 +24,9 @@
                         <a class="nav-link <?= urlIs('/user') ? 'active':''; ?>" href="/user">User</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link <?= urlIs('/task') ? 'active':''; ?>" href="/task">Task</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link <?= urlIs('/about') ? 'active':''; ?>" href="/about">About</a>
                     </li>
                 </ul>
