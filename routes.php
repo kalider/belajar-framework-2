@@ -1,16 +1,16 @@
 <?php
 
-$router->get('/', 'index.php');
-$router->get('/about', 'about.php');
+$router->get('/', 'index.php')->only('auth');
+$router->get('/about', 'about.php')->only('auth');
 
-$router->get('/login', 'auth/login.php');
-$router->post('/login', 'auth/do_login.php');
-$router->delete('/logout', 'auth/logout.php');
+$router->get('/login', 'auth/login.php')->only('guest');
+$router->post('/login', 'auth/do_login.php')->only('guest');
+$router->delete('/logout', 'auth/logout.php')->only('auth');
 
 // manage user
-$router->get('/user', 'user/index.php');
-$router->post('/user', 'user/store.php');
-$router->put('/user', 'user/update.php');
-$router->delete('/user', 'user/delete.php');
-$router->get('/user/create', 'user/create.php');
-$router->get('/user/edit', 'user/edit.php');
+$router->get('/user', 'user/index.php')->only('auth');
+$router->post('/user', 'user/store.php')->only('auth');
+$router->put('/user', 'user/update.php')->only('auth');
+$router->delete('/user', 'user/delete.php')->only('auth');
+$router->get('/user/create', 'user/create.php')->only('auth');
+$router->get('/user/edit', 'user/edit.php')->only('auth');
