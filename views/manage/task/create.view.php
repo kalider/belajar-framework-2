@@ -1,11 +1,11 @@
-<?php require base_path('views/partials/head.php') ?>
+<?php require base_path('views/manage/partials/head.php') ?>
 
 <div class="container-fluid mt-3 mb-3">
     <div class="d-flex justify-content-between align-items-center mb-2">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/task">Task</a></li>
+                <li class="breadcrumb-item"><a href="/manage">Home</a></li>
+                <li class="breadcrumb-item"><a href="/manage/task">Task</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tambah</li>
             </ol>
         </nav>
@@ -20,7 +20,7 @@
                             <div class="alert alert-danger"><?= $error ?></div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <form action="/task" method="post">
+                    <form action="/manage/task" method="post">
                         <div class="mb-3">
                             <label for="userIdSelect" class="form-label">User</label>
                             <select name="user_id" id="userIdSelect" class="form-select">
@@ -50,4 +50,4 @@
     </div>
 </div>
 
-<?php require base_path('views/partials/footer.php') ?>
+<?php require base_path('views/manage/partials/footer.php') ?>

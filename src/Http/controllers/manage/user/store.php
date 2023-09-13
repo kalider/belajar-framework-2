@@ -17,7 +17,7 @@ $validation = $validator->validate($_POST, [
 ]);
 
 if ($validation->fails()) {
-    return view('user/create.view.php', [
+    return view('manage/user/create.view.php', [
         'errors' => $validation->errors()->all()
     ]);
 }
@@ -33,4 +33,4 @@ $db->query('INSERT INTO `users` (`fullname`, `username`, `email`, `password`, `a
     'created_at' => date('Y-m-d H:i:s'),
 ]);
 
-return redirect('/user');
+return redirect('/manage/user');

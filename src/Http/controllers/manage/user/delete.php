@@ -14,4 +14,4 @@ $db->query("UPDATE `users` SET `deleted_at` = :deleted_at WHERE `id` = :id", [
     'id' => $_POST['id']
 ]);
 
-return redirect('/user');
+return redirect('/manage/user');

@@ -28,7 +28,7 @@ if (!empty($_POST['password'])) {
 $validation = $validator->validate($_POST, $rules);
 
 if ($validation->fails()) {
-    return view('user/edit.view.php', [
+    return view('manage/user/edit.view.php', [
         'errors' => $validation->errors()->all(),
         'user' => $user
     ]);
@@ -56,4 +56,4 @@ if (!empty($_POST['password'])) {
 
 $db->query($query, $params);
 
-return redirect('/user');
+return redirect('/manage/user');

@@ -12,4 +12,4 @@ $db->query('DELETE FROM `sessions` WHERE `token` = :token', [
     'token' => $token
 ]);
 
-return redirect('/login');
+return redirect('/manage/login');

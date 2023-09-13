@@ -7,6 +7,6 @@ $db = App::resolve(Database::class);
 
 $users = $db->query("SELECT * FROM `users` WHERE `deleted_at` IS NULL")->get();
 
-return view('user/index.view.php', [
+return view('manage/user/index.view.php', [
     'users' => $users
 ]);

@@ -9,6 +9,6 @@ $user = $db->query("SELECT * FROM `users` WHERE `id` = :id", [
     'id' => $_GET['id']
 ])->find();
 
-return view('user/edit.view.php', [
+return view('manage/user/edit.view.php', [
     'user' => $user
 ]);

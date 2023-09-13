@@ -1,5 +1,3 @@
 <?php
 
-view('index.view.php', [
-    'title' => 'Ini framework saya'
-]);
+return view('index.view.php', []);

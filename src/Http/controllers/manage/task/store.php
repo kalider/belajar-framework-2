@@ -13,7 +13,7 @@ $validation = $validator->validate($_POST, [
 ]);
 
 if ($validation->fails()) {
-    return view('task/create.view.php', [
+    return view('manage/task/create.view.php', [
         'errors' => $validation->errors()->all()
     ]);
 }
@@ -24,4 +24,4 @@ $db->query("INSERT INTO `tasks` SET `user_id` = :user_id, `description` = :descr
     'created_at' => date('Y-m-d H:i:s'),
 ]);
 
-return redirect('/task');
+return redirect('/manage/task');

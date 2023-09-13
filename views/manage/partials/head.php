@@ -18,19 +18,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link <?= urlIs('/') ? 'active':''; ?>" href="/">Home</a>
+                        <a class="nav-link <?= urlIs('/manage') ? 'active':''; ?>" href="/manage">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= urlIs('/user') ? 'active':''; ?>" href="/user">User</a>
+                        <a class="nav-link <?= urlIs('/manage/user') ? 'active':''; ?>" href="/manage/user">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= urlIs('/task') ? 'active':''; ?>" href="/task">Task</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= urlIs('/about') ? 'active':''; ?>" href="/about">About</a>
+                        <a class="nav-link <?= urlIs('/manage/task') ? 'active':''; ?>" href="/manage/task">Task</a>
                     </li>
                 </ul>
-                <form class="d-flex" action="/logout" method="post" onsubmit="return confirm('Apakah anda yakin ingin logout?')">
+                <form class="d-flex" action="/manage/logout" method="post" onsubmit="return confirm('Apakah anda yakin ingin logout?')">
                     <input type="hidden" name="_method" value="delete">
                     <button class="btn btn-outline-danger" type="submit">Logout</button>
                 </form>

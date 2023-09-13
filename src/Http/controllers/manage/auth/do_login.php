@@ -14,7 +14,7 @@ $validation = $validator->validate($_POST, [
 ]);
 
 if ($validation->fails()) {
-    return view('auth/login.view.php', [
+    return view('manage/auth/login.view.php', [
         'errors' => $validation->errors()->all()
     ]);
 }
@@ -24,13 +24,13 @@ $user = $db->query("SELECT * FROM `users` WHERE `email` = :email", [
 ])->find();
 
 if (!$user) {
-    return view('auth/login.view.php', [
+    return view('manage/auth/login.view.php', [
         'errors' => ['Email atau password tidak tepat.']
     ]);
 }
 
 if (!password_verify($_POST['password'], $user['password'])) {
-    return view('auth/login.view.php', [
+    return view('manage/auth/login.view.php', [
         'errors' => ['Email atau password tidak tepat.']
     ]);
 }
@@ -43,7 +43,8 @@ $user_agent = $_SERVER['HTTP_USER_AGENT'];
 $config = require base_path('config.php');
 
 $token = JWT::encode([
-    'iat' => $expire_at,
+    'iat' => time(),
+    'exp' => $expire_at,
     'user' => [
         'id' => $user['id'],
         'fullname' => $user['fullname'],
@@ -61,4 +62,4 @@ $db->query("INSERT INTO `sessions` SET `user_id` = :user_id, `token` = :token, `
 ]);
 
 setcookie('X-SESSION-APP', $token, $expire_at, '/');
-return redirect('/');
+return redirect('/manage');
