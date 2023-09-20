@@ -11,6 +11,33 @@
         <a href="/manage/user/create" class="btn btn-primary">Tambah</a>
     </div>
 
+    <form action="" method="get">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="mb-3">
+                    <label for="fullnameFilterInput" class="form-label">Nama Lengkap</label>
+                    <input type="search" class="form-control" id="fullnameFilterInput" name="filters[fullname]" value="<?=$filters['data']['fullname']?>">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mb-3">
+                    <label for="statusFilterInput" class="form-label">Status</label>
+                    <select name="filters[status]" id="statusFilterInput" class="form-select">
+                        <option value="">- Semua -</option>
+                        <option <?=$filters['data']['status'] == 1 ? 'selected': ''?> value="1">Aktif</option>
+                        <option <?=$filters['data']['status'] == 0 && $filters['data']['status'] != '' ? 'selected': ''?> value="0">Tidak Aktif</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mb-3">
+                    <label for="statusFilterInput" class="form-label d-block">&nbsp;</label>
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
     <div class="card mb-3">
         <table class="table table-striped mb-0">
             <thead>
@@ -34,7 +61,7 @@
                         <td><?= $user['email'] ?></td>
                         <td><?= $user['address'] ?></td>
                         <td><?= date('d F Y', strtotime($user['dob'])) ?></td>
-                        <td><?= $user['status'] == 1 ? '<span class="badge rounded-pill bg-success">active</span>':'<span class="badge rounded-pill bg-danger">inactive</span>' ?></td>
+                        <td><?= $user['status'] == 1 ? '<span class="badge rounded-pill bg-success">active</span>' : '<span class="badge rounded-pill bg-danger">inactive</span>' ?></td>
                         <td>
                             <a href="/manage/user/edit?id=<?= $user['id'] ?>" class="btn btn-warning">Edit</a>
                             <form action="/manage/user" method="post" class="d-inline" onsubmit="return confirm('Apakah anda yakin menghapus user ini? User yang dihapus tidak bisa dikembalikan.')">
