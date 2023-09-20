@@ -24,7 +24,7 @@ class Paginator
         return ($this->page - 1) * $this->limit;
     }
 
-    public function creatLinks($theme = 'bs4')
+    public function creatLinks($theme = 'bs5')
     {
         $links = 7;
         $last = ceil($this->total / $this->limit);
