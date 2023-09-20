@@ -21,6 +21,12 @@
             </div>
             <div class="col-lg-3">
                 <div class="mb-3">
+                    <label for="emailFilterInput" class="form-label">Email</label>
+                    <input type="search" class="form-control" id="emailFilterInput" name="filters[email]" value="<?=$filters['data']['email']?>">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="mb-3">
                     <label for="statusFilterInput" class="form-label">Status</label>
                     <select name="filters[status]" id="statusFilterInput" class="form-select">
                         <option value="">- Semua -</option>

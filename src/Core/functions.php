@@ -114,7 +114,7 @@ function form_filter($fields) {
             $val = "%{$val}%";
         }
 
-        $filters[] = "AND `{$field[0]}` {$field[1]} {$cond}";
+        $filters[] = "AND {$field[0]} {$field[1]} {$cond}";
         $params[$field[0]] = $val;
     }
 

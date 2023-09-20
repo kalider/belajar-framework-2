@@ -8,6 +8,7 @@ $db = App::resolve(Database::class);
 
 $filters = form_filter([
     'fullname' => ['fullname', 'like'],
+    'email' => ['email', 'like'],
     'status' => ['status', '=']
 ]);
 
