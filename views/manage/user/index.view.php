@@ -11,7 +11,7 @@
         <a href="/manage/user/create" class="btn btn-primary">Tambah</a>
     </div>
 
-    <div class="card">
+    <div class="card mb-3">
         <table class="table table-striped mb-0">
             <thead>
                 <tr>
@@ -48,6 +48,8 @@
             </tbody>
         </table>
     </div>
+
+    <?= $paging->creatLinks() ?>
 </div>
 
 <?php require base_path('views/manage/partials/footer.php') ?>
